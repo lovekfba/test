@@ -19,8 +19,7 @@
 
         <form action="#" id="frm">
             <input type="text" class="txt_f umail" name="uid" placeholder="id" required>
-            <!-- <input type="button" value="로그인" class="btn_submit"> -->
-            <div class="vtn_submit" >로그인</div>
+            <div class="vtn_submit" onclick="pwdsearch()" >검색</div>
             
         </form>
         <div class="find_wrap">
@@ -35,44 +34,42 @@
 
     <script>
         var id_list =[
-            {id : "1", password : "alsdfads" , mail : "1"},
-            {id : "aaaa", password : "alsdfads" , mail : "aaaa"},
-            {id : "aaab", password : "alsdfads" , mail : "aaab"},
-            {id : "aaac", password : "alsdfads" , mail : "aaac"},
-            {id : "aaad", password : "alsdfads" , mail : "aaad"},
-            {id : "aaae", password : "alsdfads" , mail : "aaae"},
-            {id : "aaaf", password : "alsdfads" , mail : "aaaf"},
-            {id : "aaag", password : "alsdfads" , mail : "aaag"},
-            {id : "aaah", password : "alsdfads" , mail : "aaah"},
-            {id : "aaai", password : "alsdfads" , mail : "aaai"},
-            {id : "aaaj", password : "alsdfads" , mail : "aaaj"},
-            {id : "aaak", password : "alsdfads" , mail : "aaak"},
+            
+            {id : "aaaa", password : "alsdfadsa" , mail : "aaaa"},
+            {id : "aaab", password : "alsdfadsb" , mail : "aaab"},
+            {id : "aaac", password : "alsdfadsc" , mail : "aaac"},
+            {id : "aaad", password : "alsdfadsd" , mail : "aaad"},
+            {id : "aaae", password : "alsdfadse" , mail : "aaae"},
+            {id : "aaaf", password : "alsdfadsf" , mail : "aaaf"},
+            {id : "aaag", password : "alsdfadsg" , mail : "aaag"},
+            {id : "aaah", password : "alsdfadsh" , mail : "aaah"},
+            {id : "aaai", password : "alsdfadsi" , mail : "aaai"},
+            {id : "aaaj", password : "alsdfadsj" , mail : "aaaj"},
+            {id : "aaak", password : "alsdfadsk" , mail : "aaak"},
         ]
         
-        var idse = "";
-        function idsearch(){
-            var mailinput = document.getElementById('umail').value; 
-            
-            for(let i = 0;i<id_list.length;i++){    
-                    let tf = id_list[i].mail.includes(mailinput)
-                    if(tf = true){
-                        idse = id_list[i].id
-                        alert("아이디는"+ idse + "입니다")
-                        break
-                    }
-            }
-        }
+        let chk = false;
         var pwse = "";
         function pwdsearch(){
-            var idinput = document.getElementById('umail').value; 
+            var idinput = document.getElementsByClassName('umail')[0].value; 
             
             for(let i = 0;i<id_list.length;i++){    
+
+                console.log(id_list[i].id==idinput)
+
                     let tf = id_list[i].id.includes(idinput)
-                    if(tf = true){
+                    if(id_list[i].id==idinput){
                         pwse = id_list[i].password
-                        alert("비밀번호는"+ pwse + "입니다")
+                        chk = true
                         break
                     }
+            
+            }
+            if(!chk) {
+                alert("잘못입력하셨습니다")
+            }
+            else {
+                alert("비밀번호"+ pwse + "입니다")
             }
         }
 
