@@ -1,0 +1,99 @@
+.main {
+    
+
+    width: 600px;
+    height: 600px;
+    background: #FFFFFF;
+    border: 1px solid #558ef8;
+    box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+    border-radius: 20px;
+    margin: 0px auto;
+    padding: 20px 50px 20px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+h2 {
+    width: 466px;
+    height: 94px;
+    left: 725px;
+    top: 132px;
+
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+
+    color: #0068FF;
+    justify-content: space-evenly;
+
+
+}
+
+.button {
+    width: 465px;
+    height: 50px;
+    left: 725px;
+    top: 875px;
+    background-color: #FFFFFF;
+    color: black;
+    border-radius: 8px;
+    border: #2a78ec solid 1px;
+}
+.button:hover{
+    background-color: rgb(118, 143, 253);
+}
+
+input {
+    padding: 0px;
+    border: none;
+    border-bottom: 1px solid #CFCFCF;
+    width: 466px;
+    height: 30px;
+    outline: none;
+}
+
+label {
+    color: lightgrey;
+}
+
+.lab2{
+    margin-top: 20px;
+}
+.long{
+    width: 400px;
+}
+.logo {
+    width: 206px;
+    height: auto;
+    
+    margin: 0px auto 40px; 
+}
+.logo1 {
+    width: auto;
+    height: auto;
+    font-size: 100px;
+    
+}
+a{
+    
+    color: black;
+}
+.box{
+    position: relative;
+}
+.check{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 50px;
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./poheader.css">
+    <link rel="stylesheet" href="./pomain.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header1">
+            <a target="_self" href="pomain.html"><div class="logo" >logo</div></a>
+            
+            <div class="login">
+                <a href="./pologin.html"><div class="login1"></div></a>
+                <a href="./posign.html"><div class="login2"></div></a>
+                
+            </div>
+        </div>
+        <div class="header2"></div>
+    </div>
+    <div class="main">
+        <div class="top">
+            <a target="_self" href="powrite.html"><div class="write" ></div></a>
+        </div>
+        <div class="main1">
+            <div class="post">
+                <div class="num">번호</div>
+                <div class="title">제목</div>
+                <div class="name">닉네임</div>
+                <div class="day">작성일</div> 
+            </div>
+            <!-- <div class="compos">
+                <div class="num"></div>
+                <div class="title"></div>
+                <div class="name"></div>
+                <div class="day"></div> 
+            </div> -->
+            
+
+        </div>
+    </div>
+    <footer></footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+            const COMPOS_LIST =[
+            
+            {write_no : 1 , title: "1번제목", name:"1번닉네임",date:"2024.04.01"},
+            {write_no : 2 , title: "2번제목", name:"2번닉네임",date:"2024.04.02"},
+            {write_no : 3 , title: "3번제목", name:"3번닉네임",date:"2024.04.03"},
+            {write_no : 4 , title: "4번제목", name:"4번닉네임",date:"2024.04.04"},
+            {write_no : 5 , title: "5번제목", name:"5번닉네임",date:"2024.04.05"},
+            {write_no : 6 , title: "6번제목", name:"6번닉네임",date:"2024.04.06"},
+            {write_no : 7 , title: "7번제목", name:"7번닉네임",date:"2024.04.07"},
+            {write_no : 8 , title: "8번제목", name:"8번닉네임",date:"2024.04.08"},
+            {write_no : 9 , title: "9번제목", name:"9번닉네임",date:"2024.04.09"},
+            {write_no : 10 , title: "10번제목", name:"10번닉네임",date:"2024.04.10"},
+            {write_no : 11 , title: "11번제목", name:"11번닉네임",date:"2024.04.11"},
+            {write_no : 12 , title: "12번제목", name:"12번닉네임",date:"2024.04.12"},
+            {write_no : 13 , title: "13번제목", name:"13번닉네임",date:"2024.04.13"},
+            {write_no : 14 , title: "14번제목", name:"14번닉네임",date:"2024.04.14"},
+            {write_no : 15 , title: "15번제목", name:"15번닉네임",date:"2024.04.15"},
+            {write_no : 16 , title: "16번제목", name:"16번닉네임",date:"2024.04.16"},
+            {write_no : 17 , title: "17번제목", name:"17번닉네임",date:"2024.04.17"},
+            {write_no : 18 , title: "18번제목", name:"18번닉네임",date:"2024.04.18"},
+            {write_no : 19 , title: "19번제목", name:"19번닉네임",date:"2024.04.19"},
+            {write_no : 20 , title: "20번제목", name:"20번닉네임",date:"2024.04.20"},
+
+        ]
+        $(document).ready(function(){
+            let el = document.getElementsByClassName(`main1`)[0]
+            let i =0;
+            let e = 17;
+            if(COMPOS_LIST.length<17){
+                e = COMPOS_LIST.length
+                
+            }
+            
+            
+            console.log(e)
+            for(let j=0; j<e;j++){
+                el.innerHTML +=
+                `<div class="compos">
+                    <div class="num">${COMPOS_LIST[j].write_no}</div>
+                    <div class="title">${COMPOS_LIST[j].title}</div>
+                    <div class="name">${COMPOS_LIST[j].name}</div>
+                    <div class="day">${COMPOS_LIST[j].date}</div> 
+                </div>`
+            }
+            
+
+        
+    })
+
+
+    </script>
+</body>
+</html>

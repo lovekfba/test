@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+}
+.header{
+    width: 100%;
+    height: 200px;
+    
+}
+.header1{
+    width: 1000PX;
+    height: 150px;
+    margin: 0 auto;
+    position: relative;
+   
+}
+.header2{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    background: #65acee;
+}
+.logo{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 100px;
+    height: 70px;
+    font-size: 50px;
+    text-decoration: underline;
+    
+}
+.login{
+    position: absolute;
+    top: 40px;
+    right: 50px;
+    width: 80px;
+    height: 32px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+}
+.login1{
+    width: 32px;
+    height: 32px;
+    background: url(./login-lock_48003.png);
+}
+
+.login2{
+    width: 32px;
+    height: 32px;
+    background: url(./register_login_signup_icon_219991.png);
+}
+footer{
+    width: 100%;
+    height: 150px;
+    background: rgb(0, 0, 0,0.8);
+    margin-top: 50px;
+}
+.main{
+    width: 1000PX;
+    
+    height: 982px;
+    border: 1px solid;
+    border-top: none;
+    margin: 0 auto;
+    
+    
+}

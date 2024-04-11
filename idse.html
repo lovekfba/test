@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="./pologin.css">
+</head>
+
+<body>
+    <div class="container"> 
+        
+        <div class="logo">
+            <a href="./pomain.html" >
+                <div class="logo1">logo</div>
+            </a>
+        </div>
+
+        <form action="#" id="frm">
+            <input type="text" class="txt_f umail" name="uid" placeholder="mail" required>
+            <input type="submit" value="로그인" class="btn_submit">
+            
+        </form>
+        <div class="find_wrap">
+            <a target="_self" href="./idse.html">아이디 찾기</a>
+            <a target="_self"  href="./pwse.html" class="find_id">비밀번호 찾기</a>
+            <a target="_self" href="./posign.html">회원가입</a>
+            <!--이메일 입력하면 아이디 찾고 
+                이메일, 아이디 입력하면 비밀번호 찾기-->
+        </div>
+
+    </div>
+
+    <script>
+        var id_list =[
+            {id : "1", password : "alsdfads" , mail : "1"},
+            {id : "aaaa", password : "alsdfads" , mail : "aaaa"},
+            {id : "aaab", password : "alsdfads" , mail : "aaab"},
+            {id : "aaac", password : "alsdfads" , mail : "aaac"},
+            {id : "aaad", password : "alsdfads" , mail : "aaad"},
+            {id : "aaae", password : "alsdfads" , mail : "aaae"},
+            {id : "aaaf", password : "alsdfads" , mail : "aaaf"},
+            {id : "aaag", password : "alsdfads" , mail : "aaag"},
+            {id : "aaah", password : "alsdfads" , mail : "aaah"},
+            {id : "aaai", password : "alsdfads" , mail : "aaai"},
+            {id : "aaaj", password : "alsdfads" , mail : "aaaj"},
+            {id : "aaak", password : "alsdfads" , mail : "aaak"},
+        ]
+        
+        var idse = "";
+        function idsearch(){
+            var mailinput = document.getElementById('mail').value; 
+            
+            for(let i = 0;i<id_list.length;i++){    
+                    let tf = id_list[i].mail.includes(mailinput)
+                    if(tf = true){
+                        idse = id_list[i].id
+                        break
+                    }
+            }
+        }
+        var pwse = "";
+        function pwdsearch(){
+            var idinput = document.getElementById('id').value; 
+            
+            for(let i = 0;i<id_list.length;i++){    
+                    let tf = id_list[i].id.includes(idinput)
+                    if(tf = true){
+                        pwse = id_list[i].password
+                        break
+                    }
+            }
+        }
+
+    </script>
+</body>
+</html>

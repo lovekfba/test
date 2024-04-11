@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./posign.css">
+</head>
+
+<body>
+    <div>
+        <div class="logo">
+            <a href="./pomain.html" >
+                <div class="logo1">logo</div>
+            </a>
+        </div>
+        <div class="main">
+            <h2>회원가입을 위해<br>정보를 입력해주세요.</h2>
+            <div class="box">
+                <form action="#" id="form1" onsubmit="return checkform()">
+                    <label for="name">* 아이디<br>
+                        <input type="text" id="name" class="long" name="idcard" required><br><br>
+                    </label>
+                    <div class="check" onclick="checkarray()">중복 확인</div>
+                    <label for="password1">* 비밀번호<br>
+                        <input class="pw" id="password1" type="password" name="pword" required><br><br>
+                    </label>
+                    <label for="password2" id="labelpw2">* 비밀번호 확인<br>
+                        <input required class="pw" id="password2" type="password" name="pword"><br><br> </label>
+                    <label for="email" id="email1">* 이메일<br>
+                        <input required type="text" id="email" name="e_mail"><br><br>
+                    </label>
+                    <input type="submit" value="가입하기" class="lab2 button">
+                </form>
+            </div>
+            
+            
+            <!-- <a href="./pomain.html"><button class="lab2">가입하기</button></a> -->
+            
+            
+        </div>
+    </div>
+    <script>
+        
+
+
+
+        var id_list =[
+            {id : "1", password : "alsdfads"},
+            {id : "aaaa", password : "alsdfads"},
+            {id : "aaab", password : "alsdfads"},
+            {id : "aaac", password : "alsdfads"},
+            {id : "aaad", password : "alsdfads"},
+            {id : "aaae", password : "alsdfads"},
+            {id : "aaaf", password : "alsdfads"},
+            {id : "aaag", password : "alsdfads"},
+            {id : "aaah", password : "alsdfads"},
+            {id : "aaai", password : "alsdfads"},
+            {id : "aaaj", password : "alsdfads"},
+            {id : "aaak", password : "alsdfads"},
+        ]
+        // document.getElementById(`form1`).addEventListener(SubmitEvent)
+        let yyay = false
+        // while(yyay==true){
+            
+        // }
+        document.getElementById('name').addEventListener(`keydown`,function(){
+            yyay = false;
+            console.log(yyay)
+        })
+        
+        
+        function checkarray(){
+            if(yyay ==false){
+                
+                let name = document.getElementById('name').value;
+                
+                let chk = false;
+                for(let i = 0;i<id_list.length;i++){    
+                    let tf = id_list[i].id.includes(name)
+                    // console.log("tf: ", tf, ", i: " , i)
+
+                    if (tf == true){
+                        // console.log(id_list[i].id)
+                        // console.log(1)
+                        chk = true
+                        break
+                    }
+                    // console.log(2)
+                }
+                
+                if(chk) {
+                    alert("사용 불가능합니다");
+                    
+                }
+                else {
+                    alert("사용 가능합니다");
+                    // document.getElementsByClassName( 'check' ).removeAttribute("onclick")
+                    // document.getElementsByClassName( 'long' )[0].setAttribute(`readonly`,true)
+                    // document.getElementById('name').setAttribute('readonly',true)
+                    // document.getElementById('img').setAttribute('src', './img/1.jpg')
+                    
+                    yyay = true
+                    return yyay
+                }
+            }
+        }
+            
+            
+            
+        let check1 = false
+        
+        
+        document.getElementById('password2').addEventListener(`change`,function(){
+            let pw1 = document.getElementById('password1').value;
+            let pw2 = document.getElementById('password2').value;
+            if (pw1 === pw2){
+                check1 = true
+                document.getElementById(`labelpw2`).style.setProperty(`color`,`green`)
+                return check1
+            }
+            else{
+                document.getElementById(`labelpw2`).style.setProperty(`color`,`red`)
+            }
+            console.log(check1)    
+        })
+        var check2 = false
+        document.getElementById('email').addEventListener(`change`,function(){
+            var input =document.getElementById('email').value
+            const pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;   
+            
+            if(pattern.test(input)==false){
+                document.getElementById(`email1`).style.setProperty(`color`,`red`)
+                console.log(check2)
+                
+            }
+            else{
+                check2 = true
+                document.getElementById(`email1`).style.setProperty(`color`,`green`)
+                console.log(check2)
+                console.log(yyay)
+            console.log(check1)
+            console.log(check2)
+                return check2
+            }
+        })
+        
+        function checkform(){
+            
+            // if(yyay==true && check1==true && check2 == true){
+            //     return true
+            // }
+            // else{
+            //     return false
+            // }
+
+
+
+            // console.log(yyay)
+            // console.log(check1)
+            // console.log(check2)
+            if (yyay==false){
+                alert('아이디 중복확인을 해주세요 ')
+                return false
+            }
+            else if(check1 == false){
+                alert('비밀번호를 확인 해주세요 ')
+                return false
+            }
+            else if(check2 == false){
+                alert('이메일을 다시 입력해주세요 ')
+                return false
+            }
+            return true
+            
+        }
+    </script>
+</body>
+
+</html>
